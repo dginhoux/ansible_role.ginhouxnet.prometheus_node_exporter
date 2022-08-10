@@ -1,0 +1,27 @@
+---
+- name: start node_exporter container
+  community.docker.docker_container:
+    name: node_exporter
+    state: started
+    image: "{{ prometheus_node_exporter_docker_image }}:v{{ prometheus_node_exporter_version }}"
+    detach: true
+    recreate: true
+    restart: true
+    # privileged: true
+    # user: root
+    pid_mode: host
+    network_mode: host
+    restart_policy: unless-stopped
+    command: >-
+      --path.rootfs=/host
+      {{ prometheus_node_exporter_options }}
+    env:
+      TZ: Europe/Paris
+    volumes:
+      - /sys:/host/sys:ro
+      - /proc:/host/proc:ro
+      - /:/host:ro
+    # ports:
+    #   - "9100:9100"
+    memory: 128m
+    cpus: 0.15

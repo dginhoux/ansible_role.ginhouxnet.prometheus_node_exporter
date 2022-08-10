@@ -1,0 +1,5 @@
+---
+- name: 'restart {{ prometheus_node_exporter_name }}'
+  service:
+    name: "{{ prometheus_node_exporter_name }}"
+    state: restarted
