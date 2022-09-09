@@ -1,4 +1,4 @@
-ginhouxnet.prometheus_node_exporter
+Ansible Role : dginhoux.prometheus_node_exporter
 =========
 
 This ansible role install, configure and uninstall prometheus node exporter.
