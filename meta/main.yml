@@ -1,5 +1,4 @@
 ---
-
 galaxy_info:
   role_name: prometheus_node_exporter
   description: install prometheus node_exporter and configure prometheus node_exporter
@@ -26,6 +25,5 @@ galaxy_info:
     - prometheus
     - node
     - exporter
-
 
 dependencies: []
