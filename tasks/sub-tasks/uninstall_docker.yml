@@ -1,12 +1,12 @@
 ---
-- name: stop node_exporter container
+- name: Stop node_exporter container
+  ignore_errors: true
   community.docker.docker_container:
     name: node_exporter
     state: stopped
-  ignore_errors: true
 
-- name: remove node_exporter container
+- name: Remove node_exporter container
+  ignore_errors: true
   community.docker.docker_container:
     name: node_exporter
     state: absent
-  ignore_errors: true
