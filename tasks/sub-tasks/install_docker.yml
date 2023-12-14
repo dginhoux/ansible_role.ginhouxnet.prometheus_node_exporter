@@ -1,5 +1,6 @@
 ---
 - name: Start node_exporter container
+  become: true
   community.docker.docker_container:
     name: node_exporter
     state: started
